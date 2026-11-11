@@ -4,51 +4,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brisling Consulting AS</title>
-<meta name="description" content="Brisling Consulting AS — nettside kommer snart.">
+<meta name="description" content="Brisling Consulting AS – fra behov til løsning som blir brukt.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
 <style>
   :root {
-    color-scheme: light dark;
-    --bg: #0b1220;
-    --fg: #f5f7fa;
-    --accent: #6fa8ff;
-    --muted: #9aa7bd;
+    --krem: #F6F3ED;
+    --marine: #0F2740;
+    --solv: #AEB6C0;
   }
   * { box-sizing: border-box; }
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
   body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    text-align: center;
-    padding: 2rem;
-  }
-  main {
-    max-width: 32rem;
-  }
-  h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
-    letter-spacing: -0.02em;
-    margin: 0 0 1.5rem;
-  }
-  p.status {
-    color: var(--accent);
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
     margin: 0;
+    background: var(--krem);
+    color: var(--marine);
+    font: 400 1.0625rem/1.6 "IBM Plex Sans", system-ui, sans-serif;
   }
+  body { min-height: 100vh; display: flex; flex-direction: column; }
+  .wrap { width: 100%; max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+  main { flex: 1; }
+  h1, h2, h3 { font-family: Montserrat, sans-serif; font-weight: 600; margin: 0; }
+  .etikett {
+    font: 400 0.8125rem/1 "IBM Plex Mono", monospace;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .knapp {
+    display: inline-block;
+    background: var(--solv);
+    color: var(--marine);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+  }
+  .knapp:hover { background: var(--krem); }
+
+  /* Topp og hero */
+  .topp { background: var(--marine); color: var(--krem); }
+  .topp nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 1.5rem; padding-bottom: 1.5rem;
+  }
+  .topp nav img { height: 1.25rem; display: block; }
+  .hero { padding-top: 5rem; padding-bottom: 6rem; }
+  .hero .etikett { color: var(--solv); }
+  .hero h1 { font-size: clamp(2.25rem, 6vw, 3.75rem); line-height: 1.1; margin: 1.25rem 0; max-width: 18ch; }
+  .hero p { font-size: 1.25rem; max-width: 34rem; margin: 0 0 2.5rem; }
+  .hero p.etikett { font-size: 0.8125rem; line-height: 1.6; margin: 0; }
+
+  /* Tjenester */
+  .tjenester { padding-top: 5rem; padding-bottom: 5rem; }
+  .tjenester ul {
+    list-style: none; padding: 0; margin: 2rem 0 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    border-top: 1px solid var(--solv); border-left: 1px solid var(--solv);
+  }
+  .tjenester li {
+    border-right: 1px solid var(--solv); border-bottom: 1px solid var(--solv);
+    padding: 1.75rem 1.5rem;
+    font-family: Montserrat, sans-serif; font-weight: 600; font-size: 1.125rem;
+  }
+
+  /* Bunn */
+  footer { background: var(--marine); color: var(--krem); }
+  footer .wrap {
+    display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+    padding-top: 2rem; padding-bottom: 2rem;
+  }
+  footer img { height: 1rem; display: block; }
+  footer a { color: var(--krem); }
 </style>
 </head>
 <body>
-<main>
-  <h1>Brisling Consulting AS</h1>
-  <p class="status">Kommer snart</p>
+
+<header class="topp">
+  <nav class="wrap">
+    <img src="assets/logo-krem.svg" alt="Brisling">
+    <a class="knapp" href="mailto:oppdrag@brisling.no">Ta en prat</a>
+  </nav>
+  <div class="wrap hero">
+    <p class="etikett">Utvikling · Data · Produkt · Økonomi</p>
+    <h1>Fra behov til løsning som blir brukt.</h1>
+    <p>Vi forstår både forretningen, brukerne og teknologien.</p>
+    <a class="knapp" href="mailto:oppdrag@brisling.no">Ta en prat</a>
+  </div>
+</header>
+
+<main class="wrap tjenester">
+  <h2 class="etikett">Tjenester</h2>
+  <ul>
+    <li>Produkt og leveranse</li>
+    <li>Applikasjoner og integrasjoner</li>
+    <li>Data og rapportering</li>
+    <li>Pilot på 6 uker</li>
+  </ul>
 </main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-krem.svg" alt="Brisling">
+    <span>Brisling Consulting AS · <a href="mailto:oppdrag@brisling.no">oppdrag@brisling.no</a></span>
+  </div>
+</footer>
+
 </body>
 </html>
