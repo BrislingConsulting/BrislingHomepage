@@ -16,6 +16,7 @@
     --krem: #F6F3ED;
     --marine: #0F2740;
     --solv: #AEB6C0;
+    --rom: clamp(3.5rem, 2.25rem + 4vw, 5.5rem);
   }
   * { box-sizing: border-box; }
   body {
@@ -40,6 +41,7 @@
     color: var(--marine);
     font-weight: 500;
     text-decoration: none;
+    white-space: nowrap;
     padding: 0.75rem 1.25rem;
   }
   .knapp:hover { background: var(--krem); }
@@ -48,16 +50,17 @@
   .topp { background: var(--marine); color: var(--krem); }
   .topp nav {
     display: flex; align-items: center; justify-content: space-between;
-    padding-top: 1.5rem; padding-bottom: 1.5rem;
+    gap: 1rem;
+    padding-top: clamp(1rem, 0.75rem + 1vw, 1.5rem); padding-bottom: clamp(1rem, 0.75rem + 1vw, 1.5rem);
   }
   .topp nav img { height: 1.25rem; display: block; }
-  .hero { padding-top: 5rem; padding-bottom: 6rem; }
+  .hero { padding-top: clamp(2.5rem, 1.5rem + 4vw, 5rem); padding-bottom: var(--rom); }
   .hero h1 { font-size: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem); line-height: 1.1; margin: 0 0 1.25rem; max-width: 18ch; }
   .hero .ingress { max-width: 34rem; margin: 0; }
 
   /* Seksjoner */
-  section { padding-top: 5rem; padding-bottom: 5rem; }
-  section h2 { font-size: clamp(1.75rem, 1.35rem + 1.6vw, 2.25rem); line-height: 1.2; margin: 0 0 2.5rem; }
+  section { padding-top: var(--rom); padding-bottom: var(--rom); }
+  section h2 { font-size: clamp(1.75rem, 1.35rem + 1.6vw, 2.25rem); line-height: 1.2; margin: 0 0 clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem); }
   .ingress { font-size: clamp(1.1875rem, 1.1rem + 0.4vw, 1.3125rem); line-height: 1.5; max-width: 40rem; margin: 0 0 1.5rem; }
 
   /* Tjenester */
@@ -75,6 +78,11 @@
   .rutenett p { margin: 0.75rem 0 0; max-width: 30rem; }
   @media (max-width: 40rem) {
     .rutenett { grid-template-columns: minmax(0, 1fr); }
+    .rutenett li { padding: 1.5rem 1.25rem; }
+  }
+  @media (max-width: 30rem) {
+    .topp nav img { height: 1rem; }
+    .knapp { padding: 0.625rem 1rem; }
   }
 
   /* Kontakt */
@@ -85,13 +93,14 @@
   .kontakt a { color: var(--marine); font-weight: 500; }
 
   /* Bunn */
-  footer { background: var(--marine); color: var(--krem); }
+  footer { background: var(--marine); color: var(--krem); font-size: 0.9375rem; }
   footer .wrap {
     display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
     padding-top: 2rem; padding-bottom: 2rem;
   }
   footer img { height: 1rem; display: block; }
   footer a { color: var(--krem); }
+  .samlet { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -149,7 +158,7 @@
 <footer>
   <div class="wrap">
     <img src="assets/logo-krem.svg" alt="Brisling">
-    <span>Brisling Consulting AS · <a href="mailto:oppdrag@brisling.no">oppdrag@brisling.no</a></span>
+    <span>Brisling Consulting AS <span class="samlet">· <a href="mailto:oppdrag@brisling.no">oppdrag@brisling.no</a></span></span>
   </div>
 </footer>
 
