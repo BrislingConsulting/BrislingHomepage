@@ -45,6 +45,10 @@
     padding: 0.75rem 1.25rem;
   }
   .knapp:hover { background: var(--krem); }
+  a { text-underline-offset: 0.15em; text-decoration-thickness: 1px; }
+  a:not(.knapp):hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--marine); outline-offset: 3px; }
+  .topp :focus-visible, footer :focus-visible { outline-color: var(--krem); }
 
   /* Topp og hero */
   .topp { background: var(--marine); color: var(--krem); }
