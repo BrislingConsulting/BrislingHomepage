@@ -60,11 +60,12 @@
   .ingress {
     font-family: Montserrat, sans-serif; font-weight: 600;
     font-size: clamp(1.375rem, 3vw, 1.75rem); line-height: 1.35;
-    max-width: 40rem; margin-bottom: 1.5rem;
+    max-width: 40rem; margin: 0 0 1.5rem;
   }
-  .om p { max-width: 40rem; margin-top: 0; }
+  .om p { max-width: 40rem; }
+  .om { padding-bottom: 0; }
 
-  /* Rutenett: laget og tjenestene */
+  /* Tjenester */
   .rutenett {
     list-style: none; padding: 0; margin: 0;
     display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
@@ -76,18 +77,10 @@
   }
   .rutenett h3 { font-size: 1.125rem; }
   .rutenett p { margin: 0.75rem 0 0; }
-  .om { padding-bottom: 0; }
-  .tjenester { padding-top: 0; }
 
-  /* Erfaring */
-  .erfaring { background: var(--solv); }
-  .erfaring ul {
-    list-style: none; padding: 0; margin: 0;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 0 2.5rem;
-  }
-  .erfaring .forklaring { max-width: 40rem; margin: 0 0 2rem; }
-  .erfaring li { border-top: 2px solid var(--marine); padding: 1rem 0 2rem; }
-  .erfaring strong { display: block; font-family: Montserrat, sans-serif; font-weight: 600; font-size: 1.125rem; margin-bottom: 0.375rem; }
+  /* Kontakt */
+  .kontakt { background: var(--solv); }
+  .kontakt .ingress a { color: var(--marine); }
 
   /* Bunn */
   footer { background: var(--marine); color: var(--krem); }
@@ -117,57 +110,40 @@
 <main>
 
 <section class="wrap om">
-  <h2 class="etikett">Om oss</h2>
+  <h2 class="etikett">Hvem vi er</h2>
   <p class="ingress">Vi er en gjeng erfarne konsulenter i Stavanger som liker å løse problemer sammen.</p>
-  <p>Vi har bakgrunn fra systemutvikling, data, økonomi og boring offshore. Vi har jobbet hos leverandør, hos
-    operatør og som konsulenter, så vi kjenner begge sider av bordet. Mest jobber vi med energi og offentlig sektor.</p>
-  <p>Selskapet eies av oss som jobber i det. Vi bygger det for lang sikt.</p>
-</section>
-
-<section class="wrap lag">
-  <h2 class="etikett">Hele kjeden, fra behov til drift</h2>
-  <ul class="rutenett">
-    <li>
-      <h3>Behov og brukere</h3>
-      <p>Vi tar kravene, prioriterer det som betyr noe og sørger for at løsningen faktisk blir tatt i bruk.</p>
-    </li>
-    <li>
-      <h3>Applikasjoner</h3>
-      <p>Vi bygger og forvalter .NET-løsninger og integrasjoner i Azure som er i drift hver dag.</p>
-    </li>
-    <li>
-      <h3>Data og rapportering</h3>
-      <p>Vi lager dataplattformer i Fabric og Databricks, og rapporter i Power BI som folk stoler på.</p>
-    </li>
-    <li>
-      <h3>Modeller og økonomi</h3>
-      <p>Vi lager maskinlæring og finansielle modeller, med en doktorgrad i regnskap i ryggen.</p>
-    </li>
-  </ul>
+  <p>Vi har bakgrunn fra systemutvikling, data og økonomi, og har jobbet både hos leverandører, hos kunder og
+    som konsulenter. Vi forstår forretningen, brukerne og teknologien, og vi bryr oss om at det vi lager faktisk
+    blir tatt i bruk.</p>
 </section>
 
 <section class="wrap tjenester">
-  <h2 class="etikett">Tjenester</h2>
+  <h2 class="etikett">Hva vi tilbyr</h2>
   <ul class="rutenett">
-    <li><h3>Produkt og leveranse</h3></li>
-    <li><h3>Applikasjoner og integrasjoner</h3></li>
-    <li><h3>Data og rapportering</h3></li>
-    <li><h3>Pilot på 6 uker</h3></li>
+    <li>
+      <h3>Produkt og leveranse</h3>
+      <p>Vi finner ut hva som trengs, prioriterer det som betyr noe og får løsningen i bruk.</p>
+    </li>
+    <li>
+      <h3>Applikasjoner og integrasjoner</h3>
+      <p>Vi utvikler og forvalter løsninger i skyen som brukes hver dag.</p>
+    </li>
+    <li>
+      <h3>Data og rapportering</h3>
+      <p>Vi bygger dataplattformer og rapporter som folk stoler på.</p>
+    </li>
+    <li>
+      <h3>Modeller og økonomi</h3>
+      <p>Vi lager analyser, maskinlæring og finansielle modeller som gir bedre beslutninger.</p>
+    </li>
   </ul>
 </section>
 
-<section class="erfaring">
+<section class="kontakt">
   <div class="wrap">
-    <h2 class="etikett">Erfaringen vi tar med oss</h2>
-    <p class="forklaring">Vi startet Brisling i 2026, men har jobbet i bransjen i mange år. Her er noe av det vi har gjort, både i tidligere jobber og hos kundene vi jobber for i dag.</p>
-    <ul>
-      <li><strong>Over ti applikasjoner i produksjon</strong>Teknisk ledelse for applikasjonsporteføljen til en statlig etat.</li>
-      <li><strong>Fra Tableau til Power BI</strong>Vi har jobbet med å flytte rapporter fra Tableau til Power BI hos en statlig etat.</li>
-      <li><strong>Utstyr til boring og brønn</strong>Leveranseansvar for systemer som planlegger og sporer utstyr hos en operatør på norsk sokkel.</li>
-      <li><strong>Fra døgn til minutter</strong>En stresstest i en bank som tok ett til to døgn, kjører nå på under ett minutt.</li>
-      <li><strong>En kommunes dataplattform</strong>Teknisk ledelse og utvikling av den sentrale dataplattformen til en kommune.</li>
-      <li><strong>Sanntidsdata i Fabric</strong>Vi har bidratt i et prosjekt med sanntidsdata for logistikk i sjømatindustrien.</li>
-    </ul>
+    <h2 class="etikett">Kontakt oss</h2>
+    <p class="ingress">Har du en utfordring vi kan hjelpe med? Send oss en e-post på
+      <a href="mailto:oppdrag@brisling.no">oppdrag@brisling.no</a>.</p>
   </div>
 </section>
 
