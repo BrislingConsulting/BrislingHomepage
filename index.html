@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brisling Consulting AS</title>
-<meta name="description" content="Brisling Consulting AS – erfarne konsulenter i Stavanger med lang erfaring fra energibransjen. Vi jobber med utvikling, data, datakvalitet og AI.">
+<meta name="description" content="Brisling Consulting AS – erfarne IT-konsulenter i Stavanger for energibransjen, olje og gass og offshore. Datakvalitet, dataplattformer, AI og maskinlæring, systemutvikling, integrasjoner, produktledelse og analyse.">
 <link rel="canonical" href="https://brisling.no/">
 <meta name="theme-color" content="#0F2740">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Brisling Consulting AS">
 <meta property="og:locale" content="nb_NO">
 <meta property="og:title" content="Brisling Consulting AS">
-<meta property="og:description" content="Erfarne konsulenter i Stavanger med lang erfaring fra energibransjen. Vi jobber med utvikling, data, datakvalitet og AI.">
+<meta property="og:description" content="Erfarne IT-konsulenter i Stavanger for energibransjen, olje og gass og offshore. Datakvalitet, dataplattformer, AI og maskinlæring, systemutvikling, integrasjoner, produktledelse og analyse.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,11 +50,15 @@
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    padding: 0.5rem 0;
+    padding: 0.8125rem 1.5rem;
+    border: 1px solid var(--solv);
+    border-radius: 0.875rem;
+    background: var(--solv);
+    color: var(--marine);
+    transition: background 0.15s, color 0.15s;
   }
-  .knapp .pil { color: var(--solv); transition: transform 0.15s, color 0.15s; }
-  .knapp:hover .pil { transform: translateX(3px); color: var(--krem); }
-  @media (prefers-reduced-motion: reduce) { .knapp .pil { transition: none; } }
+  .knapp:hover { background: var(--marine); color: var(--solv); }
+  @media (prefers-reduced-motion: reduce) { .knapp { transition: none; } }
   a { text-underline-offset: 0.15em; text-decoration-thickness: 1px; }
   a:not(.knapp):hover { text-decoration-thickness: 2px; }
   :focus-visible { outline: 2px solid var(--marine); outline-offset: 3px; }
@@ -71,13 +75,14 @@
   .hero { padding-top: clamp(2.5rem, 1.5rem + 4vw, 5rem); padding-bottom: var(--rom); }
   .hero h1 { font-size: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem); line-height: 1.1; margin: 0 0 1.25rem; max-width: 18ch; }
   .hero .ingress { max-width: 34rem; margin: 0; }
+  .hero .knapp { margin-top: 2rem; }
 
   /* Seksjoner */
   section { padding-top: var(--rom); padding-bottom: var(--rom); }
   section h2 { font-size: clamp(1.75rem, 1.35rem + 1.6vw, 2.25rem); line-height: 1.2; margin: 0 0 clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem); }
   .ingress { font-size: clamp(1.1875rem, 1.1rem + 0.4vw, 1.3125rem); line-height: 1.5; max-width: 40rem; margin: 0 0 1.5rem; }
 
-  /* Tjenester: runde kort med et lite hint av sardinboks */
+  /* Tjenester: runde kort med samme kant og hjørner som kontaktknappen */
   .rutenett {
     list-style: none; padding: 0; margin: 0;
     display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -87,17 +92,15 @@
     position: relative;
     background: #FBF9F5;
     border: 1px solid var(--solv);
-    border-radius: 2.5rem;
+    border-radius: 1.75rem;
     padding: 2.25rem;
-    /* Et hint av lokk: en svak linje innenfor kanten */
-    outline: 1px solid rgba(174, 182, 192, 0.45); outline-offset: -0.5rem;
   }
   .rutenett .etikett { display: block; margin-bottom: 0.75rem; }
   .rutenett h3 { font-size: 1.3125rem; line-height: 1.3; }
   .rutenett p { margin: 0.75rem 0 0; max-width: 30rem; }
   @media (max-width: 40rem) {
     .rutenett { grid-template-columns: minmax(0, 1fr); }
-    .rutenett li { padding: 1.75rem; border-radius: 2rem; }
+    .rutenett li { padding: 1.75rem; border-radius: 1.5rem; }
   }
   @media (max-width: 30rem) {
     .topp nav img { height: 1rem; }
@@ -107,9 +110,7 @@
   /* Kontakt */
   .kontakt { background: var(--solv); }
   .kontakt h2 { margin-bottom: 1.25rem; }
-  .kontakt .ingress { margin-bottom: 0.75rem; }
-  .kontakt p:not(.ingress) { max-width: 40rem; margin: 0; }
-  .kontakt a { color: var(--marine); font-weight: 500; }
+  .kontakt p { max-width: 40rem; margin: 0; }  .kontakt a { color: var(--marine); font-weight: 500; }
 
   /* Bunn */
   footer { background: var(--marine); color: var(--krem); font-size: 0.9375rem; }
@@ -127,23 +128,23 @@
 <header class="topp">
   <nav class="wrap">
     <img src="assets/logo-krem.svg" alt="Brisling" width="219" height="20">
-    <a class="knapp" href="mailto:hei@brisling.no">Kontakt oss <span class="pil" aria-hidden="true">&gt;</span></a>
   </nav>
   <div class="wrap hero">
-    <h1>Erfarne konsulenter i Stavanger.</h1>
-    <p class="ingress">Vi jobber med utvikling, data, datakvalitet og AI.</p>
+    <h1>Erfarne konsulenter i Stavanger</h1>
+    <p class="ingress">Vi utvikler løsninger som blir tatt i bruk, rydder i dataene og bruker AI der det teller</p>
+    <a class="knapp" href="mailto:hei@brisling.no">Ta en prat</a>
   </div>
 </header>
 
 <main>
 
 <section class="wrap tjenester">
-  <h2>Hva vi tilbyr</h2>
+  <h2>Det vi gjør</h2>
   <ul class="rutenett">
     <li>
       <span class="etikett">Data og datakvalitet</span>
       <h3>Fra rotete data til tall du stoler på</h3>
-      <p>Vi rydder i dataene, sørger for god datakvalitet og bygger plattformer som holder.</p>
+      <p>Vi rydder i dataene, retter feilene ved kilden og bygger plattformer som holder.</p>
     </li>
     <li>
       <span class="etikett">Produkt og leveranse</span>
@@ -156,9 +157,9 @@
       <p>Vi utvikler og forvalter applikasjoner og integrasjoner som får alt til å spille på lag, også med systemene dere har fra før.</p>
     </li>
     <li>
-      <span class="etikett">AI og maskinlæring</span>
-      <h3>Fra nysgjerrighet til AI som virker</h3>
-      <p>Vi finner ut hvor AI og maskinlæring hjelper, og lager løsninger som gir bedre tekniske og økonomiske beslutninger.</p>
+      <span class="etikett">AI og analyse</span>
+      <h3>Fra tall til bedre beslutninger</h3>
+      <p>Vi bygger modeller og analyser som gir et bedre grunnlag for tekniske og økonomiske beslutninger.</p>
     </li>
   </ul>
 </section>
@@ -166,9 +167,8 @@
 <section class="kontakt">
   <div class="wrap">
     <h2>Kontakt oss</h2>
-    <p class="ingress">Vil du ta en kaffe?</p>
-    <p>Hver god løsning starter med en god samtale. Fortell oss hva du har i tankene. Send en e-post til
-      <a href="mailto:hei@brisling.no">hei@brisling.no</a>.</p>
+    <p>Hver god løsning starter med en god samtale, gjerne over en kopp kaffe. Fortell oss hva du har i tankene.
+      Send en e-post til <a href="mailto:hei@brisling.no">hei@brisling.no</a>.</p>
   </div>
 </section>
 
