@@ -16,7 +16,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
     --krem: #F6F3ED;
@@ -41,16 +41,20 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
+  /* Kontaktlenken i toppen: mono med samme sperring som logoen, og pilen fra ordbildet */
   .knapp {
-    display: inline-block;
-    background: var(--solv);
-    color: var(--marine);
-    font-weight: 500;
+    display: inline-flex; align-items: center; gap: 0.6em;
+    color: var(--krem);
+    font: 500 0.8125rem/1 "IBM Plex Mono", monospace;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    padding: 0.75rem 1.25rem;
+    padding: 0.5rem 0;
   }
-  .knapp:hover { background: var(--krem); }
+  .knapp .pil { color: var(--solv); transition: transform 0.15s, color 0.15s; }
+  .knapp:hover .pil { transform: translateX(3px); color: var(--krem); }
+  @media (prefers-reduced-motion: reduce) { .knapp .pil { transition: none; } }
   a { text-underline-offset: 0.15em; text-decoration-thickness: 1px; }
   a:not(.knapp):hover { text-decoration-thickness: 2px; }
   :focus-visible { outline: 2px solid var(--marine); outline-offset: 3px; }
@@ -92,7 +96,7 @@
   }
   @media (max-width: 30rem) {
     .topp nav img { height: 1rem; }
-    .knapp { padding: 0.625rem 1rem; }
+    .knapp { font-size: 0.75rem; letter-spacing: 0.12em; }
   }
 
   /* Kontakt */
@@ -118,7 +122,7 @@
 <header class="topp">
   <nav class="wrap">
     <img src="assets/logo-krem.svg" alt="Brisling" width="219" height="20">
-    <a class="knapp" href="mailto:oppdrag@brisling.no">Kontakt oss</a>
+    <a class="knapp" href="mailto:oppdrag@brisling.no">Kontakt oss <span class="pil" aria-hidden="true">&gt;</span></a>
   </nav>
   <div class="wrap hero">
     <h1>Erfarne konsulenter i Stavanger.</h1>
